@@ -198,6 +198,16 @@ class DatalineSQLDatabase(SQLDatabase):
                 tables.append(self._custom_table_info[table.name])
                 continue
 
+            # Handle columns with NullType by removing them
+            from sqlalchemy.sql.sqltypes import NullType
+            columns_to_remove = []
+            for k, v in table.columns.items():
+                if type(v.type) is NullType:
+                    columns_to_remove.append(v)
+            
+            for column in columns_to_remove:
+                table._columns.remove(column)
+
             # add create table command
             create_table = str(CreateTable(table).compile(self._engine))
             table_info = f"{create_table.rstrip()}"
