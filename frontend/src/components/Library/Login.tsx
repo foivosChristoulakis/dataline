@@ -22,7 +22,7 @@ export default function Login() {
             alt="DataLine - AI data analysis and visualization platform"
           />
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">
-            Sign in to your DataLine account
+            Sign in to your Dataspeak account
           </h2>
         </div>
 
@@ -83,15 +83,7 @@ export default function Login() {
             </div>
           </form>
 
-          <p className="mt-10 text-center text-sm text-gray-400">
-            Don't have access?{" "}
-            <a
-              href="mailto:tech@dataline.app"
-              className="font-semibold leading-6 text-indigo-400 hover:text-indigo-300"
-            >
-              Book a demo with us
-            </a>
-          </p>
+          
         </div>
       </div>
     </>
